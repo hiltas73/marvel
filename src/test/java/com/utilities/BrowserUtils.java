@@ -92,7 +92,7 @@ public class BrowserUtils {
      * @param time
      * @return
      */
-    public static WebElement waitForClickablility(WebElement element, int time) {
+    public static WebElement waitForClickability(WebElement element, int time) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time));
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
@@ -104,7 +104,7 @@ public class BrowserUtils {
      * @param time
      * @return
      */
-    public static WebElement waitForClickablility(By locator, int time) {
+    public static WebElement waitForClickability(By locator, int time) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(time));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
