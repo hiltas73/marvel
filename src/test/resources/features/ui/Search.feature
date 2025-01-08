@@ -1,5 +1,5 @@
 Feature: Search feature
-  @search
+  @search @ui
   Scenario: Verify the search results and number of pages
     Given I am on the main page
     When I click on search button
