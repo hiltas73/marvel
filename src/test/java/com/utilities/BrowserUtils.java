@@ -29,6 +29,16 @@ public class BrowserUtils {
     }
 
     /**
+     * Moves the mouse to given element
+     *
+     * @param element on which to hover
+     */
+    public static void hover(WebElement element) {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.moveToElement(element).perform();
+    }
+
+    /**
      * return a list of string from a list of elements
      *
      * @param list of webelements
