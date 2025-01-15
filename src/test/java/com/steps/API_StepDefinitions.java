@@ -2,6 +2,7 @@ package com.steps;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.utilities.ConfigurationReader;
 import io.cucumber.java.en.*;
 import io.restassured.http.ContentType;
@@ -143,12 +144,13 @@ public class API_StepDefinitions {
             offset += limit;
             System.out.println("request/response time = " + i);
 
-            // validate each character in the response
+            // validate each character keys in the response
             List<Map<String, Object>> characters = response.jsonPath().getList("data.results");
             for (Map<String, Object> character : characters) {
                 List<String> characterKeys = new ArrayList<>(character.keySet());
                 System.out.println("characterKeys = " + characterKeys);
                 Assert.assertEquals(keyList,characterKeys);
+
             }
 
 
